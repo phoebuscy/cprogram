@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 #include <memory>
+#include "../smartptr/smartptr.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ extern "C"
 
 
 
-int main()
+int main_main()
 {
 
     int a = 9;
@@ -57,7 +58,6 @@ void SmartPointerDemo()
     ProcessLargeObject(*pLarge);
 
 } //pLarge is deleted automatically when function block goes out of scope.
-
 
 
 
