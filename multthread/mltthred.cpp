@@ -6,9 +6,5 @@
 #include "mltthred.h"
 
 
-int testMltThread()
-{
-    int a = getInt();
-}
 
 

@@ -5,10 +5,6 @@
 #ifndef CPROGRAM_MAINTEST_H
 #define CPROGRAM_MAINTEST_H
 
-#include <string>
-#include "../common/commonfunc.h"
-
-
 
 
 #endif //CPROGRAM_MAINTEST_H

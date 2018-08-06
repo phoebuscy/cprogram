@@ -7,8 +7,4 @@
 
 
 
-int testMltThread();
-
-
-
 #endif //CPROGRAM_MLTTHRED_H
