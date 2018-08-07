@@ -17,7 +17,9 @@ int main()
 {
     // int a = test_remove();
     // int b = test_remove_if();
-    int c = test_remove_copy_if();
+    // int c = test_remove_copy_if();
+    // int d = test_replace_copy_if();
+    int e = test_replace_copy();
 
     return 0;
 }
@@ -70,7 +72,7 @@ int test_remove_copy_if()
     int myints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::vector<int> myvector;
 
-   // std::remove_copy_if(myints, myints + 9, myvector.begin(), IsOdd);
+    // std::remove_copy_if(myints, myints + 9, myvector.begin(), IsOdd);
     std::remove_copy_if(myints, myints + 9, back_inserter(myvector), IsOdd);
 
     std::cout << "myvector contains:";
@@ -81,7 +83,7 @@ int test_remove_copy_if()
     std::cout << endl;
 
     cout << "print by for: ";
-    for(int a: myvector)
+    for (int a: myvector)
     {
         cout << ' ' << a;
     }
@@ -90,6 +92,38 @@ int test_remove_copy_if()
     cout << "print by for_each : ";
     for_each(myvector.begin(), myvector.end(), Print<int>());
     cout << endl;
+
+    return 0;
+}
+
+int test_replace_copy_if()
+{
+    std::vector<int> foo, bar;
+    // set some values:
+    for (int i = 1; i < 10; i++)
+    { foo.push_back(i); }              // 1 2 3 4 5 6 7 8 9
+
+    bar.resize(foo.size());            // allocate space
+    std::replace_copy_if(foo.begin(), foo.end(), bar.begin(), IsOdd, 0);
+    // 0 2 0 4 0 6 0 8 0
+
+    std::cout << "bar contains:";
+    for_each(bar.begin(), bar.end(), Print<int>());
+    cout << endl;
+
+    return 0;
+}
+
+int test_replace_copy()
+{
+    int myints[] = {10, 20, 30, 30, 20, 10, 10, 20};
+
+    std::vector<int> myvector(8);
+    std::replace_copy(myints, myints + 8, myvector.begin(), 20, 99);
+
+    std::cout << "myvector contains:";
+    for_each(myvector.begin(), myvector.end(), Print<int>());
+    std::cout << endl;
 
     return 0;
 }

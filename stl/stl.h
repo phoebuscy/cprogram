@@ -31,6 +31,8 @@ int test_remove();
 int test_remove_if();
 int test_remove_copy_if();
 bool IsOdd (int i);
+int test_replace_copy_if();
+int test_replace_copy();
 
 
 
